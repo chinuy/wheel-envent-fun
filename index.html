@@ -1,0 +1,40 @@
+<div id="app">
+  <div class="wheel__wrapper">
+    <div class="wheel__controller" @click="turning">
+      <h6 class="controller__label">PRESS</h6>
+    </div>
+    <div class="content__wrapper" ref="roulette" @transitionend="turningEnd">
+      <div class="sector__wrapper">
+        <div
+          class="sector"
+          :class="awardIdx === i && isShowResult? 'is-highlight' : ''"
+          v-for="(p, i) in prizes"
+          :style="`transform: rotate(${0.25 - (1/length)/2 - i*(1/length)}turn) skew(${90 - 360/length}deg)`"
+        ></div>
+      </div>
+      <div class="label__wrapper">
+        <div
+          class="label"
+          v-for="(p, i) in prizes"
+          :style="`transform: translateX(-50%) rotate(${-i*(1/length)}turn)`"
+          :class="awardIdx === i && isShowResult ? 'is-highlight' : ''"
+        >
+          <i class="icon" :class="p.icon"></i>
+          <h2 class="text">{{ p.text }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="result__wrapper" :class="isShowResult ? 'is-show': ''">
+      <div class="result__inner">
+        <div class="congratute">WELL DONE!</div>
+        <div class="result__text">
+          <h1 class="prefix-award">YOU GET A FREE...</h1>
+          <h1 class="award">{{ result }}!</h1>
+        </div>
+      </div>
+      <div class="result-bg-dec__wrapper">
+        <i v-for="i in 8" class="result-bg-dec" :class="prizes[awardIdx].icon"></i>
+      </div>
+    </div>
+  </div>
+</div>
