@@ -1,7 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Katness C.</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="info-table" id="table-question">
+  <table class="paleBlueRows">
+    <tbody id="questions">
+    </tbody>
+</table>
+</div>
 <div id="app">
   <div class="wheel__wrapper">
     <div class="wheel__controller" @click="turning">
-      <h6 class="controller__label">PRESS</h6>
+      <h6 class="controller__label"></h6>
     </div>
     <div class="content__wrapper" ref="roulette" @transitionend="turningEnd">
       <div class="sector__wrapper">
@@ -20,15 +37,15 @@
           :class="awardIdx === i && isShowResult ? 'is-highlight' : ''"
         >
           <i class="icon" :class="p.icon"></i>
-          <h2 class="text">{{ p.text }}</h2>
+          <!-- <h2 class="text">{{ p.text }}</h2> -->
         </div>
       </div>
     </div>
     <div class="result__wrapper" :class="isShowResult ? 'is-show': ''">
       <div class="result__inner">
-        <div class="congratute">WELL DONE!</div>
+        <!-- <div class="congratute">WELL DONE!</div> -->
         <div class="result__text">
-          <h1 class="prefix-award">YOU GET A FREE...</h1>
+          <h1 class="prefix-award">YOU ROLL TO...</h1>
           <h1 class="award">{{ result }}!</h1>
         </div>
       </div>
@@ -38,3 +55,14 @@
     </div>
   </div>
 </div>
+<div class="info-table right" id="table-team">
+  <table class="paleBlueRows">
+    <tbody id="teams">
+    </tbody>
+</table>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
