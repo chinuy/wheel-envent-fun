@@ -117,10 +117,13 @@ let vm = new Vue({
 const fun_gif = [
   "G9Vp.gif",
   "homer-simpson-the-simpsons.gif",
+  "neil-de-grasse-tyson-wheel-of-science-episodes.gif",
   "spin-record.gif",
   "spin-spin-the-wheel.gif",
+  "spin-the-wheel-dab.gif",
   "spin-the.gif",
   "the-goon-prize-wheel.gif",
+  "wheel-of-fortune-spin.gif",
   "wheel-spinning.gif",
 ];
 
