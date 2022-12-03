@@ -181,7 +181,7 @@ h1 {
   transition: all 0;
 }
 .wheel__wrapper .content__wrapper.turning {
-  transition: all 1s cubic-bezier(0, 0.48, 0.13, 1);
+  transition: all 3s cubic-bezier(0, 0.48, 0.13, 1);
 }
 .wheel__wrapper .content__wrapper .sector__wrapper {
   position: absolute;
@@ -305,4 +305,29 @@ td.text {
   width: 331px;
   height: 65px;
   line-height: inherit;
+}
+
+#overlay {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  z-index: 3;
+  transform: translate(-150%, -50%);
+  transition: translate 2s;
+}
+
+.translate {
+  translate: 70%
+}
+
+.fade-out {
+  animation: fadeOut ease 4s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
 }

@@ -16,7 +16,7 @@ const questions = [
           icon: "fas fa-baby"
         },
         {
-          text: "猜12生肖裡的動物",
+          text: "12生肖動物",
           icon: "fas fa-plane"
         },
         {
@@ -32,7 +32,7 @@ const questions = [
           icon: "fab fa-buromobelexperte"
         },
         {
-          text: "上台支援前線 ",
+          text: "支援前線 ",
           icon: "fas fa-certificate"
         },
         {
@@ -77,14 +77,32 @@ let vm = new Vue({
       this.r = Math.random();
       this.$refs.roulette.style.transform = `rotate(${this.turn}turn)`;
       this.$refs.roulette.classList.add("turning");
+      document.getElementById('fun-img').src = `./images/${fun_gif[Math.floor(Math.random() * fun_gif.length)]}`
+      document.getElementById('overlay').classList.toggle('translate')
+      setTimeout( () => {
+        document.getElementById('overlay').classList.toggle('translate');
+        document.getElementById('overlay').classList.toggle('fade-out')
+      } , 2500)
     },
     turningEnd() {
       this.$refs.roulette.classList.remove("turning");
       this.isShowResult = true;
       document.getElementById(`question-${this.awardIdx}`).innerHTML = questions[this.awardIdx].text;
+      document.getElementById('fun-img').src = ""
+      document.getElementById('overlay').classList.toggle('fade-out')
     }
   }
 })
+
+const fun_gif = [
+  "G9Vp.gif",
+  "homer-simpson-the-simpsons.gif",
+  "spin-record.gif",
+  "spin-spin-the-wheel.gif",
+  "spin-the.gif",
+  "the-goon-prize-wheel.gif",
+  "wheel-spinning.gif",
+];
 
 const teams = [
   {
