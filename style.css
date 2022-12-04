@@ -64,7 +64,7 @@ h1 {
   width: 100%;
   /* padding-left: 3%; */
   /* left: 60%; */
-  bottom: 0;
+  top: 0;
   height: 150px;
   font-weight: bold;
   background-color: #da2c38;
@@ -181,7 +181,7 @@ h1 {
   transition: all 0;
 }
 .wheel__wrapper .content__wrapper.turning {
-  transition: all 3s cubic-bezier(0, 0.48, 0.13, 1);
+  transition: all 5s cubic-bezier(0, 0.48, 0.13, 1);
 }
 .wheel__wrapper .content__wrapper .sector__wrapper {
   position: absolute;
@@ -309,25 +309,50 @@ td.text {
 
 #overlay {
   position: absolute;
-  top: 50%;
-  left: 30%;
+  top: 30%;
   z-index: 3;
-  transform: translate(-150%, -50%);
-  transition: translate 2s;
 }
 
-.translate {
-  translate: 70%
+.go1 {
+  animation: Move1 5s linear;
+  left: 0%;
 }
 
-.fade-out {
-  animation: fadeOut ease 4s;
+.go2 {
+  animation: Move2 5s linear;
+  right: 0%;
 }
-@keyframes fadeOut {
+
+@keyframes Move1 {
   0% {
-    opacity:1;
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(400px);
+  }
+  70% {
+    opacity: 1;
   }
   100% {
-    opacity:0;
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+@keyframes Move2 {
+  0% {
+    opacity: 1;
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
   }
 }

@@ -5,17 +5,12 @@ const questions = [
           count: 1
         },
         {
-          text: "一年級表演",
+          text: "識字班表演",
           icon: "fas fa-birthday-cake",
           count: 1
         },
         {
-          text: "二年級表演",
-          icon: "fas fa-star",
-          count: 1
-        },
-        {
-          text: "三年級表演",
+          text: "表演",
           icon: "fas fa-baby",
           count: 1
         },
@@ -25,7 +20,7 @@ const questions = [
           count: 1
         },
         {
-          text: "猜是誰是家長 ",
+          text: "猜猜誰是家長 ",
           icon: "fas fa-bicycle",
           count: 1
         },
@@ -72,6 +67,9 @@ let vm = new Vue({
         Math.round((this.turn - Math.floor(this.turn)) * this.length) %
         this.length
       );
+    },
+    go() {
+      return this.r > 0.5? 'go1' : 'go2'
     }
   },
   data() {
@@ -97,19 +95,15 @@ let vm = new Vue({
       this.$refs.roulette.style.transform = `rotate(${this.turn}turn)`;
       this.$refs.roulette.classList.add("turning");
       document.getElementById('fun-img').src = `./images/${fun_gif[Math.floor(Math.random() * fun_gif.length)]}`
-      document.getElementById('overlay').classList.toggle('translate')
-      setTimeout( () => {
-        document.getElementById('overlay').classList.toggle('translate');
-        document.getElementById("overlay").classList.toggle("fade-out");
-      } , 2500)
+      document.getElementById('overlay').classList.toggle(this.go)
     },
     turningEnd() {
       this.$refs.roulette.classList.remove("turning");
       this.isShowResult = true;
       this.prizes[this.awardIdx].count--;
       document.getElementById(`question-${this.awardIdx}`).innerHTML = questions[this.awardIdx].text;
+      document.getElementById('overlay').classList.toggle(this.go)
       document.getElementById('fun-img').src = ""
-      document.getElementById('overlay').classList.remove('fade-out')
     }
   }
 })
@@ -151,7 +145,7 @@ window.onload = function() {
 
   document.getElementById("teams").innerHTML = teams
     .map((team, i) => {
-      return `<tr><td class="${team.icon} text" id="team-${i}">${team.text}</td><td>1000</td></tr>`;
+      return `<tr><td class="${team.icon} text" id="team-${i}">${team.text}</td><td>100</td></tr>`;
     })
     .join("");
 }
