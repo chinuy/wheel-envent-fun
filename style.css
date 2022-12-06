@@ -243,12 +243,12 @@ h1 {
 }
 .wheel__wrapper .content__wrapper .label__wrapper .label .text,
 .wheel__wrapper .content__wrapper .label__wrapper .label .icon {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: bold;
   letter-spacing: -1.5px;
 }
 .wheel__wrapper .content__wrapper .label__wrapper .label .icon {
-  font-size: 44px;
+  font-size: 24px;
 }
 .wheel__wrapper .content__wrapper::after {
   content: "";
