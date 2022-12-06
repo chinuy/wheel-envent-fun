@@ -76,6 +76,13 @@ let vm = new Vue({
         return this.prizes[this.awardIdx].text;
       }
     },
+    q() {
+      if (this.awardIdx === -1) {
+        return null;
+      } else {
+        return this.prizes[this.awardIdx].q;
+      }
+    },
     turn() {
       return this.r * 50 + 5;
     },

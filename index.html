@@ -15,6 +15,7 @@
     </tbody>
 </table>
 </div>
+<div id="divider"></div>
 <div id="app">
   <div class="wheel__wrapper">
     <div class="wheel__controller" @click="turning">
@@ -45,8 +46,9 @@
       <div class="result__inner">
         <!-- <div class="congratute">WELL DONE!</div> -->
         <div class="result__text">
-          <h1 class="prefix-award">YOU ROLL TO...</h1>
-          <h1 class="award">{{ result }}!</h1>
+          <h1 class="prefix-award">{{ result }}</h1>
+          <br>
+          <h1 class="award">{{ q }}</h1>
         </div>
       </div>
       <div class="result-bg-dec__wrapper">

@@ -31,7 +31,7 @@
 .wheel__wrapper .wheel__controller {
   position: fixed;
   width: 128px;
-  height: 230px;
+  height: 300px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, calc(-50% - 51px));
@@ -64,8 +64,8 @@ h1 {
   width: 100%;
   /* padding-left: 3%; */
   /* left: 60%; */
-  top: 0;
-  height: 150px;
+  top: 70px;
+  height: 250px;
   font-weight: bold;
   background-color: #da2c38;
   letter-spacing: -1px;
@@ -100,17 +100,17 @@ h1 {
   /* flex: 0 0 255px; */
 }
 .wheel__wrapper .result__wrapper .result__inner .result__text .prefix-award {
-  color: white;
-  font-size: 32px;
-  font-weight: lighter;
-}
-.wheel__wrapper .result__wrapper .result__inner .result__text .award {
   width: fit-content;
   font-size: 72px;
   line-height: 85px;
   color: #43291f;
   position: relative;
   letter-spacing: -3px;
+}
+.wheel__wrapper .result__wrapper .result__inner .result__text .award {
+  color: white;
+  font-size: 40px;
+  font-weight: lighter;
 }
 .wheel__wrapper .result__wrapper .result__inner .result__text .award::after {
   content: "";
@@ -271,7 +271,7 @@ h1 {
 
 .info-table {
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: 50%;
   padding-left: 5%;
   -ms-transform: translateY(-50%);
@@ -358,4 +358,10 @@ td.team {
     opacity: 0;
     transform: translateX(-100px);
   }
+}
+
+div#divider {
+  height: 100px;
+  background-color: #226f54;
+  display: flex;
 }
