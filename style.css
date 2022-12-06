@@ -302,9 +302,12 @@ table.paleBlueRows tr:nth-child(even) {
   background: #da2c38
 }
 td.text {
-  width: 331px;
+  width: 200px;
   height: 65px;
   line-height: inherit;
+}
+td.team {
+  font-size: 26px;
 }
 
 #overlay {

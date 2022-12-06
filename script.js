@@ -32,31 +32,26 @@ const fun_gif = [
 
 const teams = [
   {
-    text: "識字班",
-    icon: "fas fa-fish"
+    text: "Team A",
+    icon: "fas fa-dog",
+    team: "識字班＆一年級＆三年級＆五年級"
   },
   {
-    text: "注音班",
-    icon: "fas fa-cat"
-  },
-  {
-    text: "一年級",
-    icon: "fas fa-dove"
+    text: "Team B",
+    icon: "fas fa-cat",
+    team: "注音班＆二年級＆四年級＆七年級"
   },
 ]
 
 window.onload = function() {
-  document.getElementById("questions").innerHTML = questions
-    .map((q, i) => {
-      return `<tr><td class="${q.icon}"></td><td class="text" id="question-${i}"></td></tr>`;
-    })
-    .join("");
-
-  document.getElementById("teams").innerHTML = teams
-    .map((team, i) => {
-      return `<tr><td class="${team.icon} text" id="team-${i}">${team.text}</td><td>100</td></tr>`;
-    })
-    .join("");
+  document.getElementById("team-a").innerHTML = 
+    `<tr><td class="${teams[0].icon}">&nbsp&nbsp${teams[0].text}</td><td class="text" id="score-a">100</td></tr>
+    <tr><td colspan="2" class="team">${teams[0].team}</td></tr>
+    `;
+  document.getElementById("team-b").innerHTML = 
+    `<tr><td class="${teams[1].icon}">&nbsp&nbsp${teams[1].text}</td><td class="text" id="score-b">100</td></tr>
+    <tr><td colspan="2" class="team">${teams[1].team}</td></tr>
+    `;
 }
 
 function shuffleArray(array) {
@@ -119,8 +114,6 @@ let vm = new Vue({
     turningEnd() {
       this.$refs.roulette.classList.remove("turning");
       this.isShowResult = true;
-      this.prizes[this.awardIdx].count--;
-      document.getElementById(`question-${this.awardIdx}`).innerHTML = questions[this.awardIdx].text;
       document.getElementById('overlay').classList.toggle(this.go)
       document.getElementById('fun-img').src = ""
       wheel_index++
