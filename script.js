@@ -109,7 +109,7 @@ let vm = new Vue({
       this.r = Math.random();
       const target_index = wheel_index
 
-      while(q_index[this.awardIdx] != target_index ) {
+      while(wheel_index < this.prizes.length && q_index[this.awardIdx] != target_index ) {
         this.r = Math.random();
       }
       
