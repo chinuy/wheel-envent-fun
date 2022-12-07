@@ -33,23 +33,21 @@ const fun_gif = [
 const teams = [
   {
     text: "Team A",
-    icon: "fas fa-dog",
     team: "識字班＆一年級＆三年級＆五年級"
   },
   {
     text: "Team B",
-    icon: "fas fa-cat",
     team: "注音班＆二年級＆四年級＆七年級"
   },
 ]
 
 window.onload = function() {
   document.getElementById("team-a").innerHTML = 
-    `<tr><td class="${teams[0].icon}">&nbsp&nbsp${teams[0].text}</td><td class="text" id="score-a">100</td></tr>
+    `<tr><td>&nbsp&nbsp${teams[0].text}</td><td class="text" id="score-a">100</td></tr>
     <tr><td colspan="2" class="team">${teams[0].team}</td></tr>
     `;
   document.getElementById("team-b").innerHTML = 
-    `<tr><td class="${teams[1].icon}">&nbsp&nbsp${teams[1].text}</td><td class="text" id="score-b">100</td></tr>
+    `<tr><td>&nbsp&nbsp${teams[1].text}</td><td class="text" id="score-b">100</td></tr>
     <tr><td colspan="2" class="team">${teams[1].team}</td></tr>
     `;
 }
