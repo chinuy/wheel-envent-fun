@@ -54,6 +54,24 @@ window.onload = function() {
     `;
 }
 
+function addPoint(id, point) {
+   const duration = 1000;
+   let obj = document.getElementById("score-" + id);
+   const start = +obj.innerText;
+   const end = start + point;
+   increment = end > start ? 1 : -1;
+   step = Math.abs(Math.floor(duration / point));
+
+   let current = start;
+   timer = setInterval(() => {
+     current += increment;
+     obj.textContent = current;
+     if (current == end) {
+       clearInterval(timer);
+     }
+   }, step);
+ }
+
 function shuffleArray(array) {
   const index = [...Array(array.length).keys()]
   for (let i = array.length - 1; i > 0; i--) {
